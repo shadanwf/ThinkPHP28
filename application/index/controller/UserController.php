@@ -120,5 +120,9 @@ class UserController extends Controller{
         return $this->fetch();
     }
 
+    public function add(){
+        echo "欢子添加的方法";
+    }
+
 
 }
