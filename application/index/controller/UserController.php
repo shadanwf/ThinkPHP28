@@ -124,6 +124,9 @@ class UserController extends Controller{
         echo "欢子添加的方法";
     }
 
+    public function add2(){
+        echo "欢子添加的第二个方法";
+    }
     public function chen(){
         echo "么么哒";
     }
