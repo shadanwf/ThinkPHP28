@@ -124,5 +124,8 @@ class UserController extends Controller{
         echo "欢子添加的方法";
     }
 
+    public function chen(){
+        echo "么么哒";
+    }
 
 }
