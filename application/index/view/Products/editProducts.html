@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商品编辑</title>
+</head>
+<body>
+    <form action="{:url('editProductsAction')}" method="post">
+        <input type="hidden" name="id" value="{$Products->getData('id')}" />
+        商品名称:<input type="text" name="name" id="name" value="{$Products->getData('name')}"/><br/>
+        商品说明:<input type="text" name="description" id="description" value="{$Products->getData('description')}"/><br/>
+        商品颜色:<input type="text" name="color" id="color" value="{$Products->getData('color')}"/><br/>
+        商品价格:<input type="text" name="price" id="price" value="{$Products->getData('price')}"/><br/>
+        商品时间:<input type="text" name="publishon" id="publishon" value="{$Products->getData('publishon')}"/><br/>
+        商品分类:
+        <select name="Classification_id" id="Classification">
+            {volist name="Classification" id="Classification"}
+            <option value="{$Classification->getData('id')}">{$Classification->getData('name')}</option>
+            {/volist}
+        </select><br />
+        <button type="submit">确定</button>
+    </form>
+</body>
+</html>

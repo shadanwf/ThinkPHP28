@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link rel="stylesheet" type="text/css" href="/thinkphp50/public/static/bootstrap-3.3.0-dist/css/bootstrap.min.css">
+</head>
+<body class="container">
+
+<div class="row">
+    <div class="col-md-8">
+        <div style="margin-top: 30px;"><p style="font-size: 25px;color: royalblue">会员列表</p></div>
+        <form class="form-inline">
+            <div class="form-group">
+                <label class="sr-only" for="name">名称</label>
+                <input name="name" type="text" class="form-control" placeholder="名称..." value="{:input('get.name')}">
+            </div>
+            <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i>&nbsp;查询</button>
+        </form>
+        <hr/>
+    </div>
+
+<div class="col-md-12">
+<table class="table table-hover table-bordered">
+    <tr class="info">
+        <th>序号</th>
+        <th>ID</th>
+        <th>名称</th>
+        <th>邮箱</th>
+        <th>密码</th>
+        <th>注册时间</th>
+
+    </tr>
+    {volist name="aa" id="klass" key="key"}
+    <tr>
+        <td>{$key}</td>
+        <td>{$klass->getData('id')}</td>
+        <td>{$klass->getData('name')}</td>
+        <td>{$klass->getData('email')}</td>
+        <td>{$klass->getData('password')}</td>
+        <td>{$klass->getData('create_time')}</td>
+
+    </tr>
+    {/volist}
+</table>
+    {$aa->render()}
+</div>
+</div>
+</body>
+</html>
